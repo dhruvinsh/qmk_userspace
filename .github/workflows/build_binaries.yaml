@@ -10,8 +10,16 @@ jobs:
     name: 'QMK Userspace Build'
     uses: qmk/.github/.github/workflows/qmk_userspace_build.yml@main
     with:
-      qmk_repo: qmk/qmk_firmware
-      qmk_ref: master
+      qmk_repo: vial-kb/vial-qmk
+      qmk_ref: vial
+      preparation_command: |
+        set -e
+        apt update
+        apt install rsync -y
+
+        for keyboard in "$GITHUB_WORKSPACE"/custom/*; do
+            rsync -av --delete "$keyboard" "$GITHUB_WORKSPACE"/qmk_firmware/keyboards/
+        done
 
   publish:
     name: 'QMK Userspace Publish'
