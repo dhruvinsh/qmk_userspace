@@ -20,14 +20,23 @@ enum layers{
 
 
 // Key Overrides aka ZMK's Mod-Morph
-const key_override_t s_dot    = ko_make_with_layers(MOD_MASK_SHIFT, KC_DOT, KC_COLON, (1 << _BASE));
-const key_override_t cs_dot   = ko_make_with_layers(MOD_MASK_CS, KC_DOT, KC_GT, (1 << _BASE));
-const key_override_t cs_comma = ko_make_with_layers(MOD_MASK_CS, KC_COMM, KC_LT, (1 << _BASE));
+// Shift + .         = :
+// Ctrl  + Shift + . = >
+// Ctrl  + Shift + , = <
+// Shift + esc       = ~
+// GUI   + esc       = `
+const key_override_t s_dot    = ko_make_basic(MOD_MASK_SHIFT, KC_DOT,  KC_COLON);
+const key_override_t cs_dot   = ko_make_basic(MOD_MASK_CS,    KC_DOT,  KC_GT);
+const key_override_t cs_comma = ko_make_basic(MOD_MASK_CS,    KC_COMM, KC_LT);
+const key_override_t s_spc    = ko_make_basic(MOD_MASK_SHIFT, KC_SPC,  KC_TILD);
+const key_override_t g_esc    = ko_make_basic(MOD_MASK_GUI,   KC_ESC,  KC_GRV);
 
 const key_override_t *key_overrides[] = {
     &s_dot,
     &cs_dot,
-    &cs_comma
+    &cs_comma,
+    &s_spc,
+    &g_esc
 };
 
 
@@ -43,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 KC_GRV,   KC_INS,   KC_LEFT,  KC_RGHT,                                                    KC_UP,    KC_DOWN,  KC_LBRC,  KC_RBRC,
                                               KC_LCTL,  KC_LALT,                                KC_RGUI,  KC_RCTL,
                                                         KC_HOME,                                KC_PGUP,
-                                    KC_BSPC,  KC_DEL,   KC_END,                                 KC_PGDN,  KC_ENTER, KC_SPC),
+                                    KC_ESC,  KC_SPC,    KC_END,                                 KC_PGDN,  KC_ENTER, KC_BSPC),
     [_FN] = LAYOUT_kinesis_adv2(
       QK_BOOT,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
       _______,  _______,  _______,  _______,  _______,  _______,                                _______,  KC_NUM,   KC_PEQL,  KC_PSLS,  KC_PAST,  _______,
