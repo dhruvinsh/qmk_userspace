@@ -6,6 +6,7 @@ enum layers{
   _FN
 };
 
+
 // HOME ROW MODS
 // Left-hand home row mods
 #define HOME_A LGUI_T(KC_A)
@@ -17,18 +18,6 @@ enum layers{
 #define HOME_E RCTL_T(KC_E)
 #define HOME_I LALT_T(KC_I)
 #define HOME_O RGUI_T(KC_O)
-
-
-// Key Overrides aka ZMK's Mod-Morph
-const key_override_t s_dot    = ko_make_with_layers(MOD_MASK_SHIFT, KC_DOT, KC_COLON, (1 << _BASE));
-const key_override_t cs_dot   = ko_make_with_layers(MOD_MASK_CS, KC_DOT, KC_GT, (1 << _BASE));
-const key_override_t cs_comma = ko_make_with_layers(MOD_MASK_CS, KC_COMM, KC_LT, (1 << _BASE));
-
-const key_override_t *key_overrides[] = {
-    &s_dot,
-    &cs_dot,
-    &cs_comma
-};
 
 
 // Kinesis advantage2 keymaps
