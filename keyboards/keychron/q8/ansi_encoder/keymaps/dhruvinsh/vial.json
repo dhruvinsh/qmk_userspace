@@ -1,8 +1,10 @@
 {
-  "name": "Keychron Q8",
+  "name": "Celeste",
   "vendorId": "0x3434",
   "productId": "0x0181",
+  "url": "https://github.com/dhruvinsh/qmk_userspace",
   "lighting": "vialrgb",
+  "maintainer": "dhruvinsh",
   "customKeycodes": [
     {"name": "Mission Control", "title": "Mission Control in macOS", "shortName": "MCtrl"},
     {"name": "Launch Pad",      "title": "Launch Pad in macOS",      "shortName": "LPad"},

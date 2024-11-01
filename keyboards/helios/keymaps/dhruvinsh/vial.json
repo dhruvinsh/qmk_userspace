@@ -2,13 +2,10 @@
   "name": "Helios",
   "vendorId": "0x3434",
   "productId": "0x0181",
-  "url": "https://github.com/dhruvinsh/helios",
-  "maintainer": "dhruvinsh",
+  "url": "https://github.com/dhruvinsh/qmk_userspace",
   "lighting": "none",
-  "matrix": {
-    "rows": 15,
-    "cols": 7
-  },
+  "maintainer": "dhruvinsh",
+  "matrix": { "rows": 15, "cols": 7 },
   "layouts": {
     "keymap": [
       [
