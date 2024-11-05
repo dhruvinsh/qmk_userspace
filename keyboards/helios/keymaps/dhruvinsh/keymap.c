@@ -20,23 +20,20 @@ enum layers{
 
 
 // Key Overrides aka ZMK's Mod-Morph
-// Shift + .         = :
-// Ctrl  + Shift + . = >
-// Ctrl  + Shift + , = <
-// Shift + esc       = ~
-// GUI   + esc       = `
+// Shift + .                  = :
+// Ctrl  + Shift   + .        = >
+// Shift + ,                  = ;
+// Ctrl  + Shift   + ,        = <
 const key_override_t s_dot    = ko_make_basic(MOD_MASK_SHIFT, KC_DOT,  KC_COLON);
 const key_override_t cs_dot   = ko_make_basic(MOD_MASK_CS,    KC_DOT,  KC_GT);
+const key_override_t s_comma  = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_SCLN);
 const key_override_t cs_comma = ko_make_basic(MOD_MASK_CS,    KC_COMM, KC_LT);
-const key_override_t s_spc    = ko_make_basic(MOD_MASK_SHIFT, KC_SPC,  KC_TILD);
-const key_override_t g_esc    = ko_make_basic(MOD_MASK_GUI,   KC_ESC,  KC_GRV);
 
 const key_override_t *key_overrides[] = {
     &s_dot,
     &cs_dot,
+    &s_comma,
     &cs_comma,
-    &s_spc,
-    &g_esc
 };
 
 
