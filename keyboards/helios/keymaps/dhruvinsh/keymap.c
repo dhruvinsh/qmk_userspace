@@ -18,6 +18,9 @@ enum layers{
 #define HOME_I LALT_T(KC_I)
 #define HOME_O RGUI_T(KC_O)
 
+// Alias
+#define LT_SPC LT(_FN, KC_SPC)
+
 
 // Key Overrides aka ZMK's Mod-Morph
 // Shift + .                  = :
@@ -49,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 KC_GRV,   KC_INS,   KC_LEFT,  KC_RGHT,                                                    KC_UP,    KC_DOWN,  KC_LBRC,  KC_RBRC,
                                               KC_LCTL,  KC_LALT,                                KC_RGUI,  KC_RCTL,
                                                         KC_HOME,                                KC_PGUP,
-                                    KC_ESC,  KC_SPC,    KC_END,                                 KC_PGDN,  KC_ENTER, KC_BSPC),
+                                    KC_ESC,   LT_SPC,   KC_END,                                 KC_PGDN,  KC_ENTER, KC_BSPC),
     [_FN] = LAYOUT_kinesis_adv2(
       QK_BOOT,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
       _______,  _______,  _______,  _______,  _______,  _______,                                _______,  KC_NUM,   KC_PEQL,  KC_PSLS,  KC_PAST,  _______,
