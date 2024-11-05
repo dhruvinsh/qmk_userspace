@@ -39,6 +39,34 @@ enum layers{
 #define HOME_I LALT_T(KC_I)
 #define HOME_O RGUI_T(KC_O)
 
+const uint16_t PROGMEM test_combo1[] = {KC_A, KC_B, COMBO_END};
+const uint16_t PROGMEM test_combo2[] = {KC_C, KC_D, COMBO_END};
+combo_t key_combos[] = {
+    COMBO(test_combo1, KC_ESC),
+    COMBO(test_combo2, LCTL(KC_Z)), // keycodes with modifiers are possible too!
+};
+
+
+// Key Overrides aka ZMK's Mod-Morph
+// Shift + .         = :
+// Ctrl  + Shift + . = >
+// Ctrl  + Shift + , = <
+// Shift + esc       = ~
+// GUI   + esc       = `
+const key_override_t s_dot    = ko_make_basic(MOD_MASK_SHIFT, KC_DOT,  KC_COLON);
+const key_override_t cs_dot   = ko_make_basic(MOD_MASK_CS,    KC_DOT,  KC_GT);
+const key_override_t cs_comma = ko_make_basic(MOD_MASK_CS,    KC_COMM, KC_LT);
+const key_override_t s_spc    = ko_make_basic(MOD_MASK_SHIFT, KC_SPC,  KC_TILD);
+const key_override_t g_esc    = ko_make_basic(MOD_MASK_GUI,   KC_ESC,  KC_GRV);
+
+const key_override_t *key_overrides[] = {
+    &s_dot,
+    &cs_dot,
+    &cs_comma,
+    &s_spc,
+    &g_esc
+};
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [MAC_BASE] = LAYOUT_ansi_69(
