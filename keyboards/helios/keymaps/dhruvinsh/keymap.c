@@ -33,6 +33,7 @@ const key_override_t s_comma  = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_SCLN);
 const key_override_t cs_comma = ko_make_basic(MOD_MASK_CS,    KC_COMM, KC_LT);
 const key_override_t s_spc    = ko_make_basic(MOD_MASK_SHIFT, LT_SPC,  KC_GRV);
 const key_override_t s_esc    = ko_make_basic(MOD_MASK_SHIFT, KC_ESC,  S(KC_GRV));
+const key_override_t s_bspc   = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);
 
 const key_override_t *key_overrides[] = {
     &s_dot,
@@ -40,7 +41,8 @@ const key_override_t *key_overrides[] = {
     &s_comma,
     &cs_comma,
     &s_spc,
-    &s_esc
+    &s_esc,
+    &s_bspc
 };
 
 
