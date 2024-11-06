@@ -20,6 +20,18 @@ enum layers{
 #define LT_SPC LT(_FN, KC_SPC)
 
 
+// combo
+// l + u = bspc
+// w + f = tab
+const uint16_t PROGMEM lu_bspc[] = {KC_L, KC_U, COMBO_END};
+const uint16_t PROGMEM wf_tab[] = {KC_W, KC_F, COMBO_END};
+
+combo_t key_combos[] = {
+    COMBO(lu_bspc, KC_BSPC),
+    COMBO(wf_tab, KC_TAB),
+};
+
+
 // Key Overrides aka ZMK's Mod-Morph
 // Shift + .                  = :
 // Ctrl  + Shift   + .        = >
