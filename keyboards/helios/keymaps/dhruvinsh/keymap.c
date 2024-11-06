@@ -25,16 +25,22 @@ enum layers{
 // Ctrl  + Shift   + .        = >
 // Shift + ,                  = ;
 // Ctrl  + Shift   + ,        = <
+// Shift + spc                = `
+// Shift + esc                = ~
 const key_override_t s_dot    = ko_make_basic(MOD_MASK_SHIFT, KC_DOT,  KC_COLON);
 const key_override_t cs_dot   = ko_make_basic(MOD_MASK_CS,    KC_DOT,  KC_GT);
 const key_override_t s_comma  = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_SCLN);
 const key_override_t cs_comma = ko_make_basic(MOD_MASK_CS,    KC_COMM, KC_LT);
+const key_override_t s_spc    = ko_make_basic(MOD_MASK_SHIFT, LT_SPC,  KC_GRV);
+const key_override_t s_esc    = ko_make_basic(MOD_MASK_SHIFT, KC_ESC,  S(KC_GRV));
 
 const key_override_t *key_overrides[] = {
     &s_dot,
     &cs_dot,
     &s_comma,
     &cs_comma,
+    &s_spc,
+    &s_esc
 };
 
 
